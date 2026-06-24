@@ -1,0 +1,93 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #b39f8b;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 100%;
+  border-top: 5px solid #70000;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.login-header h1 {
+  color: #70000;
+  font-size: 24px;
+  margin: 0;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #70000;
+  outline: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #70000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #8a0000;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+  font-size: 12px;
+  background: #bdb2a7;
+  padding: 10px;
+  border-radius: 8px;
+}

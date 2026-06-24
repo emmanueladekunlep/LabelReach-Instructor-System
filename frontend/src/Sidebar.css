@@ -1,0 +1,94 @@
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 250px;
+  background: #1A1A2E;
+  color: #772121;
+  min-height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.sidebar-brand {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #bd757b;
+}
+
+.sidebar-brand h3 {
+  color: #e92344;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-brand p {
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 4px;
+}
+
+.sidebar-nav {
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #cccccc;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.nav-item-active {
+  background: #70000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-item-active:hover {
+  background: #70000;
+  color: #ffffff;
+}
+
+.nav-item span {
+  font-size: 18px;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+/* ===== RESPONSIVE SIDEBAR ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+  
+  .sidebar-brand h3 {
+    font-size: 16px;
+  }
+  
+  .nav-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
