@@ -84,43 +84,8 @@ https://labelreach.com/wp-content/uploads/2026/06/Placements.png
 
 ## 🚀 Live Demo
 
-🔗 [LabelReach Instructor System](https://labelreach-instructor-system.vercel.app)
+🔗 [[LabelReach Instructor System](https://labelreach-instructor-system.vercel.app)](https://label-reach-instructor-system.vercel.app)
 
-
-
-## 📂 Project Structure
-
-LabelReach-Instructor-System/
-├── backend/
-│ ├── config/
-│ │ └── database.js
-│ ├── models/
-│ │ ├── index.js
-│ │ ├── Instructor.js
-│ │ ├── School.js
-│ │ └── Placement.js
-│ ├── routes/
-│ │ ├── authRoutes.js
-│ │ ├── instructorRoutes.js
-│ │ ├── schoolRoutes.js
-│ │ ├── placementRoutes.js
-│ │ └── statsRoutes.js
-│ ├── .env
-│ ├── package.json
-│ └── server.js
-├── frontend/
-│ └── src/
-│ ├── App.js
-│ ├── App.css
-│ ├── Sidebar.js
-│ ├── Sidebar.css
-│ ├── Login.js
-│ ├── Login.css
-│ ├── Instructors.js
-│ ├── Schools.js
-│ ├── Placements.js
-│ └── Settings.js
-└── README.md
 
 
 
