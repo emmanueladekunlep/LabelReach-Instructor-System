@@ -7,21 +7,9 @@
         "distDir": "build",
         "root": "frontend"
       }
-    },
-    {
-      "src": "backend/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["backend/**"],
-        "excludeFiles": ["backend/config/database.js"]
-      }
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "backend/server.js"
-    },
     {
       "src": "/(.*)",
       "dest": "frontend/build/$1"

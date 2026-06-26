@@ -7,18 +7,11 @@ import Schools from './Schools';
 import Placements from './Placements';
 import Settings from './Settings';
 import Login from './Login';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentPage, setCurrentPage] = useState('dashboard');
-  const [stats, setStats] = useState({
-    totalInstructors: 0,
-    totalSchools: 0,
-    activePlacements: 0,
-    pendingRequests: 0
-  });
-  const [loading, setLoading] = useState(true);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -28,23 +21,17 @@ function App() {
     setIsLoggedIn(false);
   };
 
-  useEffect(() => {
-    fetch('http://localhost:5001/api/stats')
-      .then(res => res.json())
-      .then(data => {
-        setStats(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.log('Error fetching stats:', err);
-        setLoading(false);
-      });
-  }, []);
-
-  // If not logged in, show login page
   if (!isLoggedIn) {
     return <Login onLogin={handleLogin} />;
   }
+
+  // Hardcoded data for demo
+  const stats = {
+    totalInstructors: 3,
+    totalSchools: 1,
+    activePlacements: 1,
+    pendingRequests: 3
+  };
 
   const recentActivities = [
     { id: 1, action: 'New instructor assigned', name: 'John Doe', school: 'Sunshine Academy', time: '2 hours ago' },
@@ -127,17 +114,6 @@ function App() {
         );
     }
   };
-
-  if (loading) {
-    return (
-      <div className="App">
-        <Sidebar currentPage={currentPage} setCurrentPage={setCurrentPage} onLogout={handleLogout} />
-        <div className="main-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-          <h2>Loading dashboard...</h2>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="App">
