@@ -1,0 +1,8 @@
+{
+  "name": "labelreach-instructor-system",
+  "version": "1.0.0",
+  "description": "LabelReach Instructor Management System",
+  "scripts": {
+    "vercel-build": "cd frontend && npm install && npm run build"
+  }
+}
