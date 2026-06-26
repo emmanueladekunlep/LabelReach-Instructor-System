@@ -1,6 +1,14 @@
 import './Sidebar.css';
 
-function Sidebar() {
+function Sidebar({ currentPage, setCurrentPage }) {
+  const navItems = [
+    { id: 'dashboard', label: '🏠 Dashboard' },
+    { id: 'instructors', label: '👨‍🏫 Instructors' },
+    { id: 'schools', label: '🏫 Schools' },
+    { id: 'placements', label: '📅 Placements' },
+    { id: 'settings', label: '⚙️ Settings' },
+  ];
+
   return (
     <div className="sidebar">
       <div className="sidebar-brand">
@@ -9,29 +17,20 @@ function Sidebar() {
       </div>
       
       <nav className="sidebar-nav">
-        <div className="nav-item nav-item-active">
-          <span>🏠</span> Dashboard
-        </div>
-        <div className="nav-item">
-          <span>👨‍🏫</span> Instructors
-        </div>
-        <div className="nav-item">
-          <span>🏫</span> Schools
-        </div>
-        <div className="nav-item">
-          <span>📅</span> Placements
-        </div>
-        <div className="nav-item">
-          <span>📊</span> Reports
-        </div>
+        {navItems.map((item) => (
+          <div
+            key={item.id}
+            className={`nav-item ${currentPage === item.id ? 'nav-item-active' : ''}`}
+            onClick={() => setCurrentPage(item.id)}
+          >
+            <span>{item.label}</span>
+          </div>
+        ))}
       </nav>
 
       <div className="sidebar-footer">
         <div className="nav-item">
-          <span>⚙️</span> Settings
-        </div>
-        <div className="nav-item">
-          <span>🚪</span> Logout
+          <span>🚪 Logout</span>
         </div>
       </div>
     </div>

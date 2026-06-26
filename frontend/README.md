@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+# 📋 LabelReach Instructor Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A professional instructor management system built for **LabelReach Advertising Ltd** to manage instructors, schools, and placements.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 The Problem
 
-### `npm start`
+As the founder of **LabelReach Advertising Ltd** and **Edumate Coding Academy**, I needed a way to manage the growing number of instructors deployed to schools. Without a centralized system, it was difficult to:
+- Track which instructors are available
+- Know which schools they're assigned to
+- Monitor active placements
+- See pending requests at a glance
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 💡 The Solution
 
-### `npm test`
+I built the **LabelReach Instructor Management System** – a professional dashboard that provides a bird's-eye view of all operations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✨ Key Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Feature | Description |
+|---------|-------------|
+| **Dashboard** | View total instructors, schools, and active placements instantly |
+| **Instructors** | Add, view, and delete instructors |
+| **Schools** | Add, view, and delete schools |
+| **Placements** | Assign instructors to schools and track status |
+| **Settings** | View system information |
+| **Login/Logout** | Secure access with demo login |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Technologies Used
 
-### `npm run eject`
+| Technology | Purpose |
+|------------|---------|
+| **React** | Frontend framework |
+| **CSS** | Custom styling with brand colors |
+| **Node.js + Express** | Backend API server |
+| **PostgreSQL** | Database for storing data |
+| **Sequelize** | ORM for database operations |
+| **Git & GitHub** | Version control |
+| **Vercel** | Deployment |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📊 Brand Colors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Primary Red:** `#70000`
+- **Gold Accent:** `#F5A623`
+- **Dark Sidebar:** `#1A1A2E`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📸 Screenshots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📸 Screenshots
+## 📸 Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Login Page
+![Login Page](images/login.png)
+https://labelreach.com/wp-content/uploads/2026/06/login.png
 
-### Code Splitting
+### Dashboard
+![Dashboard](images/dashboard.png)
+https://labelreach.com/wp-content/uploads/2026/06/dashboard.png
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Instructors Page
+![Instructors Page](images/instructors.png)
+https://labelreach.com/wp-content/uploads/2026/06/Instructors.png
 
-### Analyzing the Bundle Size
+### Schools Page
+![Schools Page](images/schools.png)
+https://labelreach.com/wp-content/uploads/2026/06/schools.png
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Placements Page
+![Placements Page](images/placements.png)
+https://labelreach.com/wp-content/uploads/2026/06/Placements.png
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 Live Demo
 
-### Advanced Configuration
+🔗 [LabelReach Instructor System](https://labelreach-instructor-system.vercel.app)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📂 Project Structure
 
-### `npm run build` fails to minify
+LabelReach-Instructor-System/
+├── backend/
+│ ├── config/
+│ │ └── database.js
+│ ├── models/
+│ │ ├── index.js
+│ │ ├── Instructor.js
+│ │ ├── School.js
+│ │ └── Placement.js
+│ ├── routes/
+│ │ ├── authRoutes.js
+│ │ ├── instructorRoutes.js
+│ │ ├── schoolRoutes.js
+│ │ ├── placementRoutes.js
+│ │ └── statsRoutes.js
+│ ├── .env
+│ ├── package.json
+│ └── server.js
+├── frontend/
+│ └── src/
+│ ├── App.js
+│ ├── App.css
+│ ├── Sidebar.js
+│ ├── Sidebar.css
+│ ├── Login.js
+│ ├── Login.css
+│ ├── Instructors.js
+│ ├── Schools.js
+│ ├── Placements.js
+│ └── Settings.js
+└── README.md
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+---
+
+## 🏃 How to Run Locally
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/emmanueladekunlep/LabelReach-Instructor-System.git
+cd LabelReach-Instructor-System
+
+
+Set Up the Backend
+cd backend
+npm install
+npm run dev
+
+Set Up the Frontend
+cd frontend
+npm install
+npm start
+
+4. Access the App
+Frontend: http://localhost:3000
+
+Backend: http://localhost:5001
+
+5. Login Credentials
+Email: Any email works
+
+Password: Any password works
+
+👨‍💻 Author
+Emmanuel Adekunle Peace
+
+Founder, LabelReach Advertising Ltd
+
+Founder, Edumate Coding Academy
+
+Portfolio
+
+📝 License
+This project is for portfolio demonstration purposes.
+
+🙏 Acknowledgments
+Built as part of my full-stack development portfolio
+
+Inspired by real business needs at LabelReach and Edumate

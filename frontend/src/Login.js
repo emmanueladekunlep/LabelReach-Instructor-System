@@ -2,14 +2,23 @@ import './Login.css';
 import logo from './logo.png';
 import { useState } from 'react';
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // For now, just show a message
-    alert('Login functionality coming soon!');
+    
+    // Accept ANY email and password
+    if (email && password) {
+      // Clear any errors
+      setError('');
+      // Call the login function from App.js
+      onLogin();
+    } else {
+      setError('Please enter both email and password');
+    }
   };
 
   return (
@@ -22,6 +31,19 @@ function Login() {
         </div>
 
         <form onSubmit={handleLogin}>
+          {error && (
+            <div style={{
+              background: '#fce4ec',
+              color: '#c62828',
+              padding: '10px',
+              borderRadius: '6px',
+              marginBottom: '15px',
+              fontSize: '14px'
+            }}>
+              {error}
+            </div>
+          )}
+
           <div className="form-group">
             <label>Email Address</label>
             <input
@@ -50,7 +72,7 @@ function Login() {
         </form>
 
         <p className="login-footer">
-          
+          🔑 Any email and password works for demo
         </p>
       </div>
     </div>
