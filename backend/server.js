@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const { sequelize, testConnection } = require('./config/database');
 
 // Load environment variables
 dotenv.config();
@@ -31,12 +30,21 @@ app.get('/', (req, res) => {
   res.send('LabelReach Backend is running! 🚀');
 });
 
-// Start server
-const PORT = process.env.PORT || 5000;
+// Test database connection route
+app.get('/api/test-db', async (req, res) => {
+  try {
+    const { sequelize } = require('./config/database');
+    await sequelize.authenticate();
+    res.json({ message: '✅ Database connected successfully!' });
+  } catch (error) {
+    res.status(500).json({ error: '❌ Database connection failed: ' + error.message });
+  }
+});
 
-app.listen(PORT, async () => {
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
-  
-  // Test database connection
-  await testConnection();
+// Start server
+const PORT = process.env.PORT || 5001;
+
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on port ${PORT}`);
+  console.log(`✅ Environment: ${process.env.NODE_ENV || 'development'}`);
 });
