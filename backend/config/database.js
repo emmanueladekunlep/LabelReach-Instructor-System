@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-// Use DATABASE_URL for production, fallback to individual variables
+// Use DATABASE_URL for production (Vercel), fallback to individual variables
 const sequelize = new Sequelize(
   process.env.DATABASE_URL || {
     database: process.env.DB_NAME,
