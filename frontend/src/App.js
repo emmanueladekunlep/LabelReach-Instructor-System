@@ -106,7 +106,7 @@ function App() {
             <div className="activity-section">
               <div className="activity-header">
                 <h3>📊 Recent Activity</h3>
-                <a href="#" className="view-all">View All →</a>
+                <button className="view-all" style={{ background: 'none', border: 'none', color: '#70000', cursor: 'pointer', fontWeight: '600', fontSize: '14px' }}>View All →</button>
               </div>
               <div className="activity-list">
                 {recentActivities.map((activity) => (
