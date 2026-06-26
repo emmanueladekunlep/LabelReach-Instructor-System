@@ -9,6 +9,21 @@ import Settings from './Settings';
 import Login from './Login';
 import { useState } from 'react';
 
+// Hardcoded demo data – this is what makes the app work without a backend
+const DEMO_DATA = {
+  instructors: [
+    { id: 1, firstName: 'John', lastName: 'Doe', email: 'john.doe@email.com', phone: '080-123-4567', specialization: 'Python', isAvailable: true },
+    { id: 2, firstName: 'Mary', lastName: 'Smith', email: 'mary.smith@email.com', phone: '080-234-5678', specialization: 'Web Dev', isAvailable: true },
+    { id: 3, firstName: 'Peter', lastName: 'Johnson', email: 'peter.johnson@email.com', phone: '080-345-6789', specialization: 'Data Analysis', isAvailable: true }
+  ],
+  schools: [
+    { id: 1, name: 'Sunshine Academy', address: '123 Education Street', city: 'Lagos', phone: '01-234-5678', email: 'info@sunshineacademy.com', isActive: true }
+  ],
+  placements: [
+    { id: 1, instructorId: 1, schoolId: 1, startDate: '2026-06-01', endDate: null, status: 'active', notes: 'John teaching Python at Sunshine Academy' }
+  ]
+};
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentPage, setCurrentPage] = useState('dashboard');
@@ -25,11 +40,10 @@ function App() {
     return <Login onLogin={handleLogin} />;
   }
 
-  // Hardcoded data for demo
   const stats = {
-    totalInstructors: 3,
-    totalSchools: 1,
-    activePlacements: 1,
+    totalInstructors: DEMO_DATA.instructors.length,
+    totalSchools: DEMO_DATA.schools.length,
+    activePlacements: DEMO_DATA.placements.filter(p => p.status === 'active').length,
     pendingRequests: 3
   };
 
@@ -43,11 +57,11 @@ function App() {
   const renderPage = () => {
     switch(currentPage) {
       case 'instructors':
-        return <Instructors />;
+        return <Instructors instructors={DEMO_DATA.instructors} />;
       case 'schools':
-        return <Schools />;
+        return <Schools schools={DEMO_DATA.schools} />;
       case 'placements':
-        return <Placements />;
+        return <Placements placements={DEMO_DATA.placements} instructors={DEMO_DATA.instructors} schools={DEMO_DATA.schools} />;
       case 'settings':
         return <Settings />;
       default:
